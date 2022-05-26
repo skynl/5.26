@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			body,html{
+				background:black;
+				width:100%;
+				height:100%;
+				overflow:hidden;
+				perspective:1000px;
+			}
+			/* body:hover .box{
+				transform:rotateY(40deg) translate(-50%,-50%);
+			} */
+			.box{
+				width:150px;
+				height:200px;
+				position:absolute;
+				left:50%;top:50%;
+				/* 基于自身位移 */
+				/* transform:translate(-50%,-50%); */
+				margin: -100px 0px 0px -75px;
+				/* margin:100px auto; */
+				/* border:1px solid red; */
+				transform-style:preserve-3d;
+				transition:0.5s;
+				transform-origin:50% 0px;
+			}
+			.box>img{
+				width:100%;
+				height:100%;
+				position:absolute;
+				border-radius:10px;
+				border:1px solid #fff;
+				/* 加阴影 */
+				box-shadow:0px 0px 10px 2px #fff;
+				/* 加倒影 */
+				-webkit-box-reflect: below 20px linear-gradient(to top,rgba(255,255,255,0.3),transparent 30%);
+			}
+			
+			.img9{
+				transform:rotateY(40deg) translateZ(450px);
+			}
+			.img8{
+				transform:rotateY(80deg) translateZ(450px);
+			}
+			.img7{
+				transform:rotateY(120deg) translateZ(450px);
+			}
+			.img6{
+				transform:rotateY(160deg) translateZ(450px);
+			}
+			.img5{
+				transform:rotateY(200deg) translateZ(450px);
+			}
+			.img4{
+				transform:rotateY(240deg) translateZ(450px);
+			}
+			.img3{
+				transform:rotateY(280deg) translateZ(450px);
+			}
+			.img2{
+				transform:rotateY(320deg) translateZ(450px);
+			}
+			/* 旋转360° = 原位置 */
+			.img1{
+				transform:translateZ(450px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src='img/1.jpg' alt='' class='img1'>
+			<img src='img/2.jpg' alt='' class='img2'>
+			<img src='img/3.gif' alt='' class='img3'>
+			<img src='img/4.jpg' alt='' class='img4'>
+			<img src='img/5.jpg' alt='' class='img5'>
+			<img src='img/6.jpg' alt='' class='img6'>
+			<img src='img/7.jpg' alt='' class='img7'>
+			<img src='img/8.jpg' alt='' class='img8'>
+			<img src='img/9.jpg' alt='' class='img9'>
+		</div>
+	</body>
+</html>
+<script>
+	var oBox = document.querySelector('.box');
+	// 鼠标滚轮事件 chrome IE
+	document.onmousewheel = mouseWheel;
+	
+	// 鼠标滚轮事件 firefox
+	document.addEventListener('DOMMouseScroll',mouseWheel);
+	
+	var deg = 0;
+	
+	function mouseWheel(e){
+		if(e.wheelDelta){
+			var direction = e.wheelDelta < 0 ? -1 : 1;
+		}else{
+			var direction = e.detail < 0 ? 1 : -1;
+		};
+		console.log(direction);
+		deg += 40*direction;
+		oBox.style.transform = `rotateY(${deg}deg)` ;
+	}
+		
+	
+</script>

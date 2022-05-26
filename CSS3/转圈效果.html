@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.border{
+				width:110px;
+				height:110px;
+				/* background:skyblue; */
+				border-radius:50%;
+				position:absolute;
+				top:50%;left:50%;
+				margin-left:-55px;
+				margin-top:-55px;
+				border:5px solid #666;
+				border-top:5px solid lightgreen;
+				transition:all 4s 0s ease;
+				
+			}
+			
+			.box{
+				width:107px;
+				height:107px;
+				background:skyblue;
+				border-radius:50%;
+				position:absolute;
+				top:50%;left:50%;
+				margin-left:-48px;
+				margin-top:-48px;
+				text-align:center;
+				line-height:107px;
+				font-size:20px;
+				color:white;
+				z-index:2
+			}
+			.box:hover+.border{
+				transform:rotate(360deg);
+				border-top:5px solid pink;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			海定驾校
+		</div>
+		<div class="border">
+			
+		</div>
+		
+		
+	</body>
+</html>
