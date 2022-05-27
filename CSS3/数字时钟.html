@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{margin:0px;padding:0px;}
+			body,html{
+				width:100%;
+				height:100%;
+				background-color:#000;
+				overflow:hidden;
+				perspective:1200px;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+			}
+			.content{
+				flex:1;
+				height:200px;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				transform:rotateX(20deg);
+				perspective:1200px;
+			}
+			.group{
+				width:240px;
+				height:200px;
+				display:flex;
+				justify-content:space-between;
+			}
+			
+			.number{
+				width:100px;
+				height:200px;
+				float:left;
+				position:relative;
+			}
+			
+			.line{
+				width:92px;
+				height:4px;
+				position:absolute;
+				left:0px;
+				top:0px;
+				background:#111;
+			}
+			/* 顶 */
+			.line:nth-child(1){
+				transform:translateX(4px);
+			}
+			/* 左上边 */
+			.line:nth-child(2){
+				transform-origin:0px 4px;
+				transform:rotate(90deg);
+			}
+			/* 右上边 */
+			.line:nth-child(3){
+				transform-origin:0px 4px;
+				transform:translateX(96px) rotate(90deg);
+			}
+			/* 中间 */
+			.line:nth-child(4){
+				transform:translate(4px,96px);
+			}
+			/* 左下边 */
+			.line:nth-child(5){
+				transform-origin:0px 4px;
+				transform:translateY(96px) rotate(90deg);
+			}
+			/* 右下边 */
+			.line:nth-child(6){
+				transform-origin:0px 4px;
+				transform:translate(96px,96px) rotate(90deg);
+			}
+			/* 底部 */
+			.line:nth-child(7){
+				transform:translate(4px,192px);
+			}
+			
+			/* 伪元素上做时间 */
+			.line:after{
+				content:'';
+				display:block;
+				width:92px;
+				height:4px;
+				background:aqua;
+				transform:translateZ(80px);
+				transition:0.5s;
+			}
+			
+			.content,.group,.number,.line,.dot,.dot>div{
+				transform-style:preserve-3d;
+			}
+			
+			/* 设置点 */
+			.dot{
+				width:150px;
+				height:200px;
+				position:relative;
+			}
+			/* 下面阴影 */
+			.dot>div{
+				width:20px;
+				height:20px;
+				border-radius:50%;
+				background:#222;
+				position:absolute;
+				left:50%;
+				margin-left:-10px;
+			}
+			.dot>div:nth-child(1){bottom:70px;}
+			.dot>div:nth-child(2){bottom:30px;}
+			
+			.dot>div:after{
+				content:'';
+				display:block;
+				width:20px;
+				height:20px;
+				border-radius:50%;
+				background:aqua;
+				transform:translateZ(80px);
+				animation:dot 1s infinite linear;
+			}
+			
+			@keyframes dot{
+				from{
+					transform:translateZ(80px);
+				}
+				to{
+					transform:translateZ(70px);
+					background:#333;
+				}
+			}
+			
+			/* 把所有动画定义好 */
+			[data-num="0"] .line:nth-child(4):after,
+			[data-num="1"] .line:nth-child(1):after,
+			[data-num="1"] .line:nth-child(2):after,
+			[data-num="1"] .line:nth-child(4):after,
+			[data-num="1"] .line:nth-child(5):after,
+			[data-num="1"] .line:nth-child(7):after,
+			[data-num="2"] .line:nth-child(2):after,
+			[data-num="2"] .line:nth-child(6):after,
+			[data-num="3"] .line:nth-child(2):after,
+			[data-num="3"] .line:nth-child(5):after,
+			[data-num="4"] .line:nth-child(1):after,
+			[data-num="4"] .line:nth-child(5):after,
+			[data-num="4"] .line:nth-child(7):after,
+			[data-num="5"] .line:nth-child(3):after,
+			[data-num="5"] .line:nth-child(5):after,
+			[data-num="6"] .line:nth-child(3):after,
+			[data-num="7"] .line:nth-child(2):after,
+			[data-num="7"] .line:nth-child(4):after,
+			[data-num="7"] .line:nth-child(5):after,
+			[data-num="7"] .line:nth-child(7):after,
+			[data-num="9"] .line:nth-child(5):after
+			{
+				/* 无论是哪个数字运动0-9，它们的动画是不都一样 */
+				transform:translateZ(20px);
+				background:#333;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<div class="group">
+				<div class="number" id="aa" data-num="0">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
+				
+				<div class="number" data-num="0">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
+			</div>
+			<!-- 点 -->
+			<div class="dot">
+				<div></div>
+				<div></div>
+			</div>
+				
+			<div class="group">
+				<div class="number" data-num="0">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
+					
+				<div class="number" data-num="0">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
+					
+			</div>
+			<!-- 点 -->
+			<div class="dot">
+				<div></div>
+				<div></div>
+			</div>
+			<div class="group">
+				<div class="number" data-num="0">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
+				<div class="number" data-num="0">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	var aNumber = document.querySelectorAll('.number');
+	
+	function clock(){
+		var date = new Date();
+		var h = date.getHours();
+		var m = date.getMinutes();
+		var s = date.getSeconds();
+		var str = addZero(h) + addZero(m) + addZero(s);
+		//设置
+		for(var i = 0;i <str.length;i++){
+			aNumber[i].setAttribute('data-num',str[i]);
+		}
+	};
+	
+	function addZero(n){return n < 10 ? '0'+n : ''+n};
+	clock();
+	setInterval(clock,1000);
+</script>
