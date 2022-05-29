@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			body,html{
+				background-color:black;
+			}
+			.box{
+				width:800px;
+				height:400px;
+				font-size:200px;
+				font-weight:bold;
+				position:absolute;
+				left:50%;top:50%;
+				margin-left:-400px;
+				margin-top:-200px;
+				background:linear-gradient(to right bottom,#000,#fff,#000);
+				background-size:10%;
+				background-repeat:no-repeat;
+				color:rgba(255,255,255,0.1);
+				-webkit-background-clip:text;
+				animation:move linear 5s infinite;
+			}
+			@keyframes move{
+				from{
+					background-position: -100%;
+				}
+				to{
+					background-position: 200%;
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			你好长沙
+		</div>
+	</body>
+</html>
