@@ -15,7 +15,7 @@
 			/* @-webkit-keyframes run{
 				0%{
 					transform:rotate(0deg);
-					
+					transform-origin:175px 25px;
 				}
 				25%{
 					transform:rotate(180deg);
@@ -43,7 +43,7 @@
 			@-webkit-keyframes run2{
 				from{
 					transform:rotate(180deg);
-					transform-origin:-25px 25px;
+					/* transform-origin:-25px 25px; */
 				}
 				to{
 					transform:rotate(0deg);
@@ -54,30 +54,32 @@
 				height:50px;
 				border-radius:50%;
 				margin:75px auto;
+				position:relative;
 			}
 			.box>div:nth-child(1){
 				background:red;
 				/* animation-name:run,run2;
 				animation-duration:2s;
 				animation-timing-function:ease; */
-				animation:run 2s forwards,run2 2s 2s forwards;
+				animation:run 2s forwards,run2 2s 4s forwards;;
+				
 				transform-origin:175px 25px;
 				
 				
 			}
 			.box>div:nth-child(2){
 				background:lightgreen;
-				/* animation:run 2s 2s forwards; */
+				animation:run 2s 2s forwards;
 				transform-origin:175px 25px;
 			}
 			.box>div:nth-child(3){
 				background:pink;
-				/* animation:run 2s forwards; */
+				animation:run 2s forwards;
 				transform-origin:-125px 25px;
 			}
 			.box>div:nth-child(4){
 				background:aqua;
-				/* animation:run 2s 2s forwards; */
+				animation:run 2s 2s forwards;
 				transform-origin:-125px 25px;
 			}
 		</style>
@@ -89,14 +91,5 @@
 			<div class='c'></div>
 			<div class='d'></div>
 		</div>
-		
 	</body>
 </html>
-<!-- <script>
-	var a = document.querySelector('.a');
-	a.addEventListener('animationend',function(e){
-		a.style.animation = 'run 2s forwards';
-		a.style.transformOrigin= '-25px 25px';
-	},false)
-	
-</script> -->

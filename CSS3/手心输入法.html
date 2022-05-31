@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{margin:0px ;padding:0px;}
+			a{text-decoration:none;}
+			img{vertical-align:bottom;}
+			li{list-style:none;}
+			/* 头部样式 */
+			.sx-nav{
+				display:flex;
+				justify-content:space-around;
+				align-items:center;
+				padding-bottom:20px;
+				z-index:100;
+				position:absolute;
+				width:100%;
+				margin-top : 10px;
+				
+				/* border-bottom:1px solid rgb(79,164,255); */
+			}
+			/* logo样式 */
+			.sx-nav a{
+				display:inline-block;
+			}
+			.sx-nav>a:nth-child(1){
+				width:192px;
+				height:56px;
+				/* position:absolute;
+				left:40px;top:20px; */
+				z-index:998;
+				background:url('sx-img/global.png') no-repeat ;
+			}
+			/* 更新日志样式 */
+			.sx-nav>a:nth-child(3){
+				width:92px;
+				height:30px;
+				/* position:absolute;
+				right:130px;top:43px; */
+				z-index:998;
+				background:url('sx-img/global.png') no-repeat 0px -58px;
+			}
+			/* 头部中间样式 */
+			.device>a:nth-child(1){
+				width:93px;
+				height:95px;
+				background:url('sx-img/global.png') no-repeat -276px -116px;
+			}
+			.device>a:nth-child(2){
+				width:72px;
+				height:95px;
+				background:url('sx-img/global.png') no-repeat 0px -400px;
+			}
+			.device>a:nth-child(2):hover{
+				background:url('sx-img/global.png') no-repeat -72px -400px;
+			}
+			.device>a:nth-child(3){
+				width:68px;
+				height:95px;
+				background:url('sx-img/global.png') no-repeat 0px -305px;
+			}
+			.device>a:nth-child(3):hover{
+				background:url('sx-img/global.png') no-repeat -68px -305px;
+			}
+			.device>a:nth-child(4){
+				width:92px;
+				height:95px;
+				background:url('sx-img/global.png') no-repeat 0px -211px;
+			}
+			.device>a:nth-child(4):hover{
+				background:url('sx-img/global.png') no-repeat -92px -211px;
+			}
+			/* 线条样式 */
+			.line{
+				position:absolute;
+				left:0px;top:50%;
+				margin-top:210px;
+				width:100%;
+				height:1px;
+				background-color:#4fa4ff;
+				transition:2s;
+			}
+			/* 内容样式 */
+			.main{
+				position:absolute;
+				top:0px;left:0px;
+				width:100%;
+				height:100%;
+				z-index:1;
+			}
+			.scene{
+				position:absolute;
+				left:0px;
+				top:0px;
+				width:100%;
+				height:100%;
+				display:none;
+			}
+			.s1{
+				display:block;
+				opacity:1;
+				
+				transition:2s;
+			}
+			/* win页面样式 */
+			.Win{
+				position:absolute;
+				left:0px;top:0px;
+				width:100%;
+				height:100%
+			}
+			.elem{
+				position:absolute;
+				left:50%;
+				top:50%;
+				background:url('sx-img/s0_win.png') no-repeat;
+			}
+			.display{
+				/* opacity:0;
+				transform:scale(0.95); */
+				width:452px;
+				height:347px;
+				margin-top:-130px;
+				margin-left:-226px;
+				/* animation:Opacity 2s forwards,Display 1s forwards; */
+			}
+			.lamp{
+				/* opacity:0;
+				transform:translateX(-200px); */
+				width:304px;
+				height:379px;
+				background-position:-452px 0;
+				margin-top:-168px;
+				margin-left:-490px;
+				z-index:2;
+				/* animation:Opacity 2s forwards,lamp 2s forwards; */
+			}
+			.cup{
+				/* opacity:0;
+				transform:translateY(-190px); */
+				width:61px;
+				height:66px;
+				background-position:-756px -150px;
+				margin-top:110px;
+				margin-left:310px;
+				z-index:2;
+				/* animation:Opacity 2s forwards,cup 2s forwards; */
+			}
+			.brush{
+				/* opacity:0;
+				transform:translateY(-170px); */
+				width:77px;
+				height:150px;
+				background-position:-756px 0;
+				margin-top:-20px;
+				margin-left:420px;
+				z-index:2;
+				trasform-origin:0px 0px;
+				/* animation:Opacity 2s forwards,brush 2s forwards; */
+			}
+			.download{
+				opacity:0;
+				width:196px;
+				height:48px;
+				position:absolute;
+				left:50%;
+				top:50%;
+				margin-top:225px;
+				margin-left:-99px;
+				background:url('sx-img/global.png') no-repeat 0 -592px;
+				transition:2s;
+				/* animation:Opacity 2s forwards; */
+			}
+			@keyframes Opacity{
+				from{
+					opacity:0;
+				}
+				to{
+					opacity:1;
+				}
+			}
+			@keyframes rOpacity{
+				from{
+					opacity:1;
+				}
+				to{
+					opacity:0;
+				}
+			}
+			@keyframes Display{
+				0%{
+					transform:scale(0.95);
+				}33%{
+					transform:scale(1.1);
+				}
+				66%{
+					transform:scale(0.98);
+				}
+				100%{
+					transform:scale(1);
+				}
+			}
+			@keyframes rDisplay{
+				0%{
+					transform:scale(1);
+				}33%{
+					transform:scale(0.98);
+				}
+				66%{
+					transform:scale(1.1);
+				}
+				100%{
+					transform:scale(0.95);
+				}
+			}
+			@keyframes lamp{
+				from{
+					/* opacity:0; */
+					transform:translateX(-200px);
+				}
+				to{
+					/* opacity:1; */
+					transform:translateX(0px);
+				}
+			}
+			@keyframes rlamp{
+				from{
+					/* opacity:0; */
+					transform:translateX(0px);
+				}
+				to{
+					/* opacity:1; */
+					transform:translateX(-200px);
+				}
+			}
+			@keyframes cup{
+				from{
+					/* opacity:0; */
+					transform:translateY(-190px);
+				}
+				to{
+					/* opacity:1; */
+					transform:translateY(0px);
+				}
+			}
+			@keyframes rcup{
+				from{
+					/* opacity:0; */
+					transform:translateY(0px);
+				}
+				to{
+					/* opacity:1; */
+					transform:translateY(-190px);
+				}
+			}
+			@keyframes brush{
+				from{
+					/* opacity:0; */
+					transform:translateY(-170px);
+				}
+				to{
+					/* opacity:1; */
+					transform:translateY(0px);
+				}
+			}
+			@keyframes rbrush{
+				from{
+					/* opacity:0; */
+					transform:translateY(0px);
+				}
+				to{
+					/* opacity:1; */
+					transform:translateY(-170px);
+				}
+			}
+			
+			/* 底部样式 */
+			.copyright{
+				opacity:1;
+				position:fixed;
+				left:50%;bottom:4px;
+				margin-left:-220px;
+				text-align:center;
+				line-height:24px;
+				font-size:12px;
+				color:gray;
+			}
+			.copyright>a{
+				text-decoration:underline;
+				cursor:pointer;
+			}
+			/* 侧边样式 */
+			aside{
+				z-index:3;
+				width:12px;
+				height:160px;
+				position:fixed;
+				right:20px;
+				top:50%;
+				margin-top:-80px;
+				display:flex;
+				flex-direction:column;
+				justify-content:space-around;
+			}
+			aside span{
+				display:block;
+				border-radius:50%;
+				width:10px;
+				height:10px;
+				background-color:#cfe6ff;
+				margintop:15px;
+				cursor:default;
+			}
+			aside .current{
+				background-color:#4fa4ff;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="sx-nav">
+			<a href=""></a>
+			<div class="device">
+				<a class="win" href="">
+					
+				</a>
+				<a class="android"href="">
+					
+				</a>
+				<a class="IOS" href="">
+					
+				</a>
+				<a class="mac" href="">
+					
+				</a>
+			</div>
+			<a href=""></a>
+		</header>
+		<div class="line"></div>
+		<section class="main">
+			<div class="scene s1">
+				<div class="Win">
+					<div class="elem display"></div>
+					<div class="elem lamp"></div>
+					<div class="elem cup"></div>
+					<div class="elem brush"></div>
+				</div>
+				<div class="copyright">
+					Copyright©2014-2021 xinshuru.com All Rights Reserved
+					<a href="">京ICP证14021817号</a>
+				</div>
+			</div>
+			<div class="scene s2">
+				<div class="anim">
+					<div class="text"></div>
+					<div class="elem leaves-big"></div>
+					<div class="elem leaves-small"></div>
+				</div>
+			</div>
+			<div class="scene s3"></div>
+			<div class="scene s4"></div>
+			<div class="scene s5"></div>
+			<div class="scene s6"></div>
+		</section>
+		<aside>
+			<span class="current"></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</aside>
+		<a class="download" href=''></a>
+	</body>
+</html>
+<script src="js/gyj.js"></script>
+<script>
+	var n = 1;
+	var spans = document.querySelectorAll('span');
+	// 6个界面获取
+	var s1 = document.querySelector('.s1');
+	var s2 = document.querySelector('.s2');
+	var s3 = document.querySelector('.s3');
+	var s4 = document.querySelector('.s4');
+	var s5 = document.querySelector('.s5');
+	var s6 = document.querySelector('.s6');
+	//s1内 win内动画效果注入 初始动画
+	var display = document.querySelector('.display');
+	var lamp = document.querySelector('.lamp');
+	var cup = document.querySelector('.cup');
+	var brush = document.querySelector('.brush');
+	var download = document.querySelector('.download');
+	var section = document.querySelector('section');
+	var copyright = document.querySelector('.copyright');
+	var line = document.querySelector('.line');
+	display.style.animation = 'Opacity 2s forwards,Display 1s forwards';
+	lamp.style.animation = 'Opacity 2s forwards,lamp 2s forwards';
+	cup.style.animation = 'Opacity 2s forwards,cup 2s forwards';
+	brush.style.animation = 'Opacity 2s forwards,brush 2s forwards';
+	download.style.animation = 'Opacity 2s forwards';
+	
+	document.onmousewheel = function(event){
+		// if(S0.lock){return};
+		// 验证
+		if(event.wheelDelta){
+			var direction = event.wheelDelta < 0 ? -1 : 1;
+		}else{
+			var direction = event.detail < 0 ? 1 : -1;
+		}
+		n -= direction;
+		n = n > spans.length ? 1 : n;
+		n = n < 1 ? spans.length : n;
+		// 改变span
+		for(var i = 0; i < spans.length; i++){
+			spans[i].className = '';
+		}
+		spans[n-1].className = 'current';
+		console.log(n);
+		if(n - 1 == 1 || n == screen.length){
+			line.style.top = '130px';
+			line.style.marginTop = '0px';
+			display.style.animation = 'rOpacity 2s forwards,rDisplay 1s forwards';
+			lamp.style.animation = 'rOpacity 2s forwards,rlamp 2s forwards';
+			cup.style.animation = 'rOpacity 2s forwards,rcup 2s forwards';
+			brush.style.animation = 'rOpacity 2s forwards,rbrush 2s forwards';
+			copyright.style.opacity = 0;
+			download.style.marginTop = '250px';
+		}
+		// if()
+	}
+</script>
