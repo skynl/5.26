@@ -1,0 +1,193 @@
+*{margin: 0px;padding:0px;}
+li{list-style: none;}
+img{vertical-align: bottom;}
+a{text-decoration: none;}
+/* body{
+	background:url('../images/home-bg.jpg') no-repeat;
+	background-size: 100%;
+} */
+button, [type="button"]{outline: none !important;}
+body,html{
+	height: 2000px;
+	background-color: #f7f7f7;
+}
+.navbar .jumbotron{
+	margin-bottom: 0px;
+}
+.container,.container-fluid{
+	overflow: hidden;
+}
+/* .row{
+	text-align: center;
+} */
+.mynav{
+	top:-51px;
+	transition: 0.4s;
+}
+.logo{
+	font-size: 40px;
+	color: #ccc;
+}
+#home>h2{
+	margin: 40px;
+	color: aqua;
+	/* font-size: 24px; */
+}
+#home>span{
+	display: block;
+	font-size: 16px;
+	color: #999;
+	margin:40px;
+}
+.jumbotron{
+	background:url('../images/home-bg.jpg') no-repeat center center;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	height: 100vh;
+	overflow: hidden;
+}
+.zjgg{
+	text-align: center;
+	width: 120px;
+	height: 40px;
+	display: inline-block;
+	font-size: 16px;
+	line-height: 30px;
+	color: white;
+	background-color: #BA1A04;
+	cursor: pointer;
+	border-radius:0;
+	transition: .5s;
+	margin:20px;
+}
+.zjgg:hover{
+	background-color: white;
+	color:#BA1A04;
+}
+
+/* 关于我们 */
+.base-title{
+	padding-top: 50px;
+}
+.about>h1{
+	position: relative;
+	line-height:80px;
+}
+.about>h1:after{
+	content: '';
+	width: 14%;
+	height: 2px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 0px;
+	background: aquamarine;
+}
+.about>p{
+	line-height: 24px;
+}
+.about-content>div:nth-child(2)>h1{
+	font-size: 24px;
+	margin-top: 0px;
+}
+
+/* 团队介绍 */
+.team-content{
+	text-align: center;
+	margin: 40px;
+}
+.team-content img{
+	width: 50%;
+}
+.team-content h5{
+	color:#999;
+}
+.team-content span{
+	border-radius: 50%;
+	background-color: #09f;
+	font-size: 20px;
+	padding: 12px;
+	color:white;
+	cursor: pointer;
+}
+.team-content span:hover{
+	transition: 0.3s;
+	transform: scale(1.1);
+}
+/* 网站建设 */
+.web,.contact{
+	background-color: #dcdcdc;
+	margin-top: 40px;
+}
+.web-content{
+	padding: 30px 0;
+}
+.web-content span{
+	padding: 42px;
+	border-radius: 50%;
+	border: 2px solid #999;
+	color:#999;
+	font-size: 40px;
+	transition: 0.3s;
+}
+.web-content span:hover{
+	transform: rotate(360deg);
+}
+.web-content p{
+	color: #666;
+}
+/* 经典案例 */
+.case-content .media{
+	background-color: #eee;
+	margin-bottom: 30px;
+}
+.case-content .media-body{
+	padding: 0px 16px;
+}
+.case-content h3{
+	margin: 30px 0 20px 0;
+	line-height: 50px;
+	position: relative;
+	font-size: 18px;
+}
+.case-content h3::after{
+	content: '';
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	width:10%;
+	height:2px;
+	background:turquoise;
+}
+.case-content p{
+	margin-bottom: 30px;
+}
+.case-content .media-right{
+	width:260px;
+	padding:0px;
+	overflow: -moz-hidden-unscrollable;
+}
+.case-content .media-right img{
+	transition: 1s;
+}
+.case-content .media-right img:hover{
+	transform: scale(1.1);
+}
+/* 联系我们 */
+.contact{
+	padding: 40px 0px;
+}
+.contact .tea{
+	height: 130px;
+	resize: none;
+}
+.contact-content [class^='col-md']{
+	margin-bottom: 15px;
+}
+.contact-content .btn-sm{
+	padding: 5px 30px;
+}
+footer{
+	text-align: center;
+	margin-top:20px;
+}
