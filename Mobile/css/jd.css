@@ -103,38 +103,45 @@ nav{
 /* 轮播图样式 */
 .banner-box{
 	height: 9.25rem;
+	width: 358px;
 	position:relative;
 	border-radius:1rem;
 	margin: 3rem 1rem 1rem 1rem;
+	/* background-color: red; */
 	overflow:hidden;
 }
 .banner-list{
-	width:100%;
+	display: flex;
+	height: 100%;
+	/* width:100%; */
 	position:absolute;
 	left:0px;top:0px;
-	height: 9.25rem;
+	/* height: 9.25rem; */
 	padding: 0;
 	min-height: 0;
+	background-color: red;
 
 }
 /* .banner-list .p1,.banner-list .p2,.banner-list .p3{ */
 .banner-list>li{
-	height:9.25rem;
-	width:100%;
-	position:absolute;
-	left:0%;top:0px;
+	/* height:100%; */
+	width:358px;
+	
+	/* position:absolute;
+	left:0%;top:0px; */
 }
 .banner-list>li:nth-child(2){
-	position:absolute;
-	left:100%;top:0px;
+	/* position:absolute;
+	left:100%;top:0px; */
 }
 .banner-list>li:nth-child(3){
-	position:absolute;
-	left:200%;top:0px;
+	/* position:absolute;
+	left:200%;top:0px; */
 }
 .banner-list>li>a>img{
 	width:100%;
-	height:100%;
+	/* height:100%; */
+	
 }
 .spans{
 /* 	position:absolute;
