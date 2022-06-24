@@ -1,0 +1,125 @@
+@media (max-width:1200px){
+    .navbar-header .logo1{
+        width: 152px;
+        height: 60px;
+        background: url("../img/yue-sprit001.png") no-repeat -202px 0px;
+        margin-top:2px;
+        margin-left: 20px;
+    }
+    .logo2{
+        font-size:1.4em;
+        margin:0;
+        padding-left: 10px;
+    }
+    .nav-top{
+        padding-left:40px;
+    }
+    .nav-top{
+        height: 80px;
+        line-height: 80px; 
+    }
+    .nav-top .navbar-collapse{
+        height: 80px;
+        line-height: 80px;
+        font-size:0.9em;
+    }
+    .nav-top .navbar-collapse{
+        display: block;
+    }
+    .navbar-collapse a{
+        padding:3px 2px;
+    }
+    .bged .quality{
+        width:16.18%;
+        
+    }
+    .quality .term{
+        transform: scale(0.8);
+    }
+
+} 
+
+@media (max-width:990px){
+   .bged .quality{
+         border:0;
+   }
+}
+@media (max-width:768px){
+    .navbar-header .logo1{
+        width: 122px;
+        height: 50px;
+        background: url("../img/yht-logo-195X80.png") no-repeat;
+        background-size:100% auto;
+        margin-top:-2px;
+        margin-left: 20px;
+    }
+    .logo2{
+        font-size:1.2em;
+    }
+    .nav-top .navbar-collapse,.nav-top{
+        height: 60px;
+        line-height: 60px;
+    }
+    .nav-top .navbar-collapse{
+        display: none;
+    }
+    .input-group #search-key{
+        height: 40px;
+    }
+    .input-group #s-i-bt{
+        height: 40px;
+        background: #fdd26d url(../img/yue-sprit001.png) 50% -173px no-repeat;
+    }
+    .quality .term{
+        transform: scale(0.6);
+    }
+    
+}
+@media (min-width:768px){
+    .carousel .carousel-indicators{
+        bottom:20px;
+    }
+}
+@media (max-width:560px){
+    .navbar-header .logo1{
+        width: 105px;
+        background: url("../img/yht-logo-195X80.png") no-repeat;
+        background-size:100% auto;
+        margin-top:5px;
+        margin-left: 10px;
+    }
+    .logo2{
+        font-size:1em;
+    }
+    .navbar-collapse a{
+        font-size:0.9em;
+        padding:0px;
+    }
+    .input-group #s-i-bt{
+        height: 40px;
+        width:80px;
+        /* background: #fdd26d url(../img/yue-sprit001.png) 50% -173px no-repeat; */
+    }
+    .index-group .item-outer{
+        width:100%;
+    }
+    .bged .quality{
+        width:50%;
+        float: left;
+    }
+    .bged .quality-d1,.quality-d2{
+        display: block;
+    }
+    .bged .quality-d1{
+        font-weight: bold;
+    }
+    .bged .term{
+        display: none;
+    }
+}
+@media (max-width:340px){
+    .input-group #s-i-bt{
+        height: 40px;
+        width: 40px;
+    }
+}
