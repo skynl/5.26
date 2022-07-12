@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1 ,user-scalable=no">
+		<title>学生信息表</title>
+		<link href="css/bootstrap.css" rel="stylesheet"/>
+		<style>
+			button{
+				outline: none !important;
+			}
+			[v-cloak]{display :none;}
+		</style>
+	</head>
+	
+	<body>
+		<div id="app">
+			<div class="container">
+				<h2 class="text-center text-info">学生信息表</h2>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group" :class="idStatus">
+							<label for="xh">学号:</label>
+							<input @input="checkId" v-bind:disabled="idDisabled" type="number" id='xh' class="form-control" v-model="ID"/>
+							<span :class="idMsg" v-show="idMsg" v-cloak>{{idInfo}}</span>
+							<span class="form-control-feedback glyphicon" :class = "idFonts"></span>
+						</div>
+						<div class="form-group">
+							<label for="xm">姓名:</label>
+							<input type="text" id='xm' class="form-control" v-model="Name"/>
+						</div>
+						<div class="form-group">
+							<label for="nl">年龄:</label>
+							<input type="number" id='nl' class="form-control" v-model="Age"/>
+						</div>
+						<div>
+							<button class="btn btn-success btn-sm" @click = "add">添加</button>
+							&nbsp;
+							<button class="btn btn-danger btn-sm" >取消</button>
+						</div>
+					</div>
+				</div>
+				<h3 class="text-center text-danger">学生信息表</h3>
+				
+				<table class="table table-bordered table-hover table-condensed text-center">
+					<!-- 表头 -->
+					<tr>
+						<th class="text-center">序号</th>
+						<th class="text-center">学号</th>
+						<th class="text-center">姓名</th>
+						<th class="text-center">年龄</th>
+						<th class="text-center">添加时间</th>
+						<th class="text-center">神操作</th>
+					</tr>
+					<!-- 表数据1 -->
+					<tr v-for="(item,index) in student" :key="item.id">
+						<td>{{index + 1}}</td>
+						<td>{{item.id}}</td>
+						<td>{{item.name}}</td>
+						<td>{{item.age}}</td>
+						<td>{{item.time}}</td>
+						<td>
+							<button class="btn btn-warning btn-xs" @click = "change(item)">修改</button>
+							&nbsp;
+							<button data-toggle="modal" data-target = "#myModal" class="btn btn-danger btn-xs" @click = "delStatus = item.id">删除</button>
+						</td>
+					</tr>
+					
+					<tr v-if = "student.length == 0">
+						<td colspan="6">暂无更多</td>
+					</tr>
+					<tr v-else>
+						<td colspan="6">
+							<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal" @click = "delStatus = 'all'">删除全部</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<!-- 模态框 -->
+			<div class="modal fade" id="myModal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h3 class="modal-title">{{delMsg}}<span class="close" data-dismiss="modal">&times;</span></h3>
+						</div>
+						<div class="modal-footer">
+							<button @click="del" class="btn btn-success btn-sm" data-dismiss="modal">确定</button>
+							<button class="btn btn-danger btn-sm" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/vue.global.js"></script>
+<script src="js/format.js"></script>
+<script>
+	const app = Vue.createApp({
+		data(){
+			return {
+				ID : '',
+				Name : '',
+				Age : '',
+				
+				// 校验类
+				idStatus : [],
+				idMsg : '',
+				idFonts : '',
+				// 交互消息
+				idInfo : '',
+				// 学号输入框状态
+				idDisabled : false,
+				// 删除分类
+				delStatus : '',
+				// status : false,
+				student : [
+					{id: 1001 ,name: "小明" , age : 18 , time : new Date().toString()},
+					{id: 1002 ,name: "小花" , age : 16 , time : new Date().toString()}
+				],
+			}
+		},
+		computed:{
+			delMsg(){
+				return this.delStatus == 'all' ? '确定删除全部嘛？' : '确定删除嘛？';
+			}
+		},
+		methods : {
+			// 验证方法
+			checkId(){
+				// 非空
+				if(this.ID == ''){
+					this.resetEnpty();
+					return true;
+				};
+				
+				// 验证学号 : 一种是新增  一种是修改
+				if(!this.idDisabled){
+					let idS = this.student.some((item) => {
+						return item.id == this.ID;
+					});
+					
+					if(idS){
+						// 调用交互
+						this.resetRepeat();
+						return;
+					}else{
+						// 调用交互
+						this.resetSuccess();
+					};
+				};
+			},
+			add(){
+				//调用验证方法
+				if(this.checkId()) return;
+				//console.log(this.idStatus);
+				
+				//验证添加新或者修改
+				if(this.idDisabled){
+					//修改 : 拿到当前修改的项(下标)
+					let nowObj = {id : this.nowId, name : this.nowName, age : this.nowAge, time : formatDate(new Date(), 'yyyy-MM-dd hh-mm-ss')};
+					
+					//查找到替换
+					this.student.forEach((item, index) => {
+						if(item.id == this.nowId){
+							this.student.splice(index, 1, nowObj);
+							// 放开id禁用
+							this.idDisabled = false;
+							this.resertInput();
+							return;
+						};
+					});	
+					return;
+				};
+				// 新增
+				this.student.push({id : this.ID,name : this.Name, age: this.Age,time : formatDate(new Date(),'yyyy-MM-dd hh-mm-ss')});
+				this.resertInput();
+				
+			},
+			del(){
+				if(this.delStatus == 'all'){
+					this.delMsg = '确定删除全部嘛？';
+					this.student = [];
+					this.idDisabled = false;
+					this.resertInput();
+					return;
+				};
+				// 删除单个
+				this.student.forEach((item,index)=>{
+					if(item.id == this.delStatus){
+						this.student.splice(index,1);
+						return;
+					};
+				});
+				if(this.ID == this.delStatus){
+					this.idDisabled = false;
+					this.resertInput();
+				};
+			},
+			change(e){
+				this.idDisabled = true;
+				this.ID = e.id;
+				this.Name = e.name;
+				this.Age = e.age;
+
+			},
+			resetEnpty(){
+				this.idStatus = ['has-feedback','has-error'];
+				this.idMsg = 'help-block';
+				this.idFonts = 'glyphicon-remove';
+				this.idInfo = '学号不能为空';
+			},
+			resetRepeat(){
+				this.idStatus = ['has-feedback','has-error'];
+				this.idMsg = 'help-block';
+				this.idFonts = 'glyphicon-remove';
+				// 交互消息
+				this.idInfo = '学号已存在';
+			},
+			resetSuccess(){
+				this.idStatus = ['has-feedback','has-success'];
+				this.idMsg = 'help-block';
+				this.idFonts = 'glyphicon-ok';
+				this.idInfo = '学号可用';
+			},
+			resertInput(){
+				this.idStatus = [];
+				this.idMsg = '';
+				this.idFonts = '';
+				this.idInfo = '';
+				this.ID = '';
+				this.Name = '';
+				this.Age = '';
+			}
+		}
+	});
+	app.mount('#app');
+</script>

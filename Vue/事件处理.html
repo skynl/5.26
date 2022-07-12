@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: aliceblue;
+		}
+		.child{
+			width: 100px;
+			height: 100px;
+			background-color: antiquewhite;
+		}
+	</style>
+	<body>
+		<div id="app">
+			<div id="app">
+				<div class="box" @click="clickHandler">
+					<div class="child" @click="childHandler"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/vue.global.js"></script>
+<script>
+	const app = Vue.createApp({
+		data(){
+			return {
+				
+			}
+		},
+		// 对应方法选项
+		methods: {
+			clickHandler(e){
+				console.log("点击了box");
+				// 阻止默认事件，原生处理
+				// e.preventDefault();
+			},
+			childHandler(e){
+				console.log('点击了child')
+			}
+		},
+	});
+	app.mount("#app");
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<button @click="isShow = !isShow">按钮</button>
+			<p v-if="''">你看得见嘛？</p>
+			<p v-else-if="false">div4</p>
+			<p v-else>div5</p>
+			<template v-if="isShow">
+				<p>11</p>
+				<p>11</p>
+				<p>11</p>
+				<p>11</p>
+			</template>
+		</div>
+	</body>
+</html>
+<script src="js/vue.global.js"></script>
+<script>
+	const app = Vue.createApp({
+		data(){
+			return {
+				isShow : true
+			}
+		},
+	})
+	const VM = app.mount('#app');
+</script>

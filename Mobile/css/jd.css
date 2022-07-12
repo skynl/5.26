@@ -8,8 +8,9 @@ html{
 }
 
 /* 首页顶部搜索菜单栏 */
+
 nav{
-	position:absolute;
+	position:fixed;
 	top:0px;left:0px;
 	width:100%;
 	background:rgb(200,37,25);
@@ -181,14 +182,32 @@ nav{
 }
 /* 中部分类栏 */
 .middle-box{
-	/* margin-top:1rem; */
+	
+	padding-bottom:1rem;
 	position:relative;
 	width:100%;
+	height: 9.5625rem;
+	overflow-x: hidden;
+}
+.middle-box-container{
+	display: flex;
+	justify-content: space-between;
+	width: auto;
 }
 .middle-nav{
+/* 	position: absolute;
+	top: 0px;left: 0px; */
 	display:flex;
-	justify-content:spce-around;
+	justify-content:space-around;
 	flex-wrap:wrap;
+	width:100%;
+}
+.middle-nav-r{
+	/* position: absolute;
+	top: 0px;left: 100%; */
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
 	width:100%;
 }
 .a1{
@@ -212,7 +231,7 @@ nav{
 	width:100%;
 	position:absolute;
 	left:0px;right:0px;
-	/* bottom:4px; */
+	bottom:4px;
 	z-index:5;
 	text-align:center;
 }
@@ -229,6 +248,175 @@ nav{
 .middle-spans .cu{
 	background:red;
 }
+/* 京东秒杀 */
+.floor {
+    font-size: 0;
+    width: 100%;
+    overflow: hidden;
+	background-color: #f6f6f6;
+}
+.floor.seckill .floor-the-container {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.floor-the-container {
+    position: relative;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0;
+}
+.floor .floor-container:last-child {
+    border-bottom: none;
+}
+.floor-container {
+    width: 100%;
+    font-size: 0;
+    overflow: hidden;
+}
+.sec_kill_floor {
+    webkit-box-shadow: 0 1px 1px #f2f2f2;
+    box-shadow: 0 1px 1px #f2f2f2;
+    background: #fff;
+    border-radius: 0.6rem;
+    overflow: hidden;
+}
+.floor-container .sec_kill_floor .title_wrap {
+	background: url('../imgs/下载.png');
+    background-size: contain;
+}
+.floor a {
+    text-decoration: none;
+}
+.seckill-left-link {
+    display: inline-block;
+    float: left;
+}
+.floor-container .seckill-tit-img {
+    float: left;
+    display: inline-block;
+    height: 1.35rem;
+    margin-top: 0.4rem;
+    margin-right: 0.25rem;
+    margin-left: 0.5rem;
+    font-family: PingFangSC-Semibold;
+    font-size: .7rem;
+    color: #333;
+    letter-spacing: 0;
+    line-height: 1.2;
+}
+.seckill-more-link {
+    display: inline-block;
+    color: #f23030;
+    float: right;
+    font-size: .6rem;
+    text-align: right;
+    position: relative;
+    padding-right: 1.1rem;
+}
+.seckill-more-icon {
+    display: inline-block;
+    width: 0.55rem;
+    height: 0.55rem;
+	background: url('../imgs/arrow_rt_2ccb8cd5.png');
+    background-size: cover;
+    position: absolute;
+    right: 0.4rem;
+    top: 0.5rem;
+}
+/* 下方滚动条 */
+.gdt{
+	overflow-x: scroll;
+}
+.floor .floor-container:last-child {
+    border-bottom: none;
+}
+.seckill-slider {
+    width: -webkit-calc(100% - 0.625rem);
+    width: calc(100% - 0.625rem);
+    margin: 0 auto;
+}
+.floor-container {
+    width: 100%;
+    font-size: 0;
+    overflow: hidden;
+}
+.seckill-new-list {
+    position: relative;
+    background-color: #fff;
+	width: 642.333px;
+}
+.seckill-new-item.j_sk_li {
+    margin-top: 0.5rem;
+	width: 59.3333px
+}
+.seckill-new-item {
+    width: 2.675rem;
+    float: left;
+}
+.seckill-item-img, .seckill-item-price {
+    width: 100%;
+    padding: 0 0.05rem;
+}
+.seckill-new-link {
+    display: block;
+    position: relative;
+}
+.floor-container img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    min-height: 1px;
+    min-width: 1px;
+	border: 0;
+	vertical-align: top;
+}
+.seckill-item-price {
+    margin: 0 auto;
+    text-align: center;
+}
+.seckill-new-price {
+    font-family: JDZhengHT-EN-Regular;
+    margin-top: 0.5rem;
+    display: block;
+    color: #f2270c;
+    font-size: .65rem;
+    line-height: .6rem;
+    height: 0.6rem;
+    text-align: center;
+}
+.seckill-new-price em {
+    font-size: 11px;
+    padding-right: 2px;
+}
+.seckill-all-item {
+    width: 1.55rem;
+    padding-left: 0.55rem;
+    float: left;
+}
+.seckill-all-item a {
+    text-decoration: none;
+    display: block;
+}
+.seckill-all {
+    width: 1rem;
+    height: 5rem;
+    background-color: #f5f5f5;
+    color: #666;
+    font-size: .6rem;
+    padding: 0.4rem 0;
+}
+.show-all-icon, .show-all-title {
+    display: block;
+    margin: 0 0.25rem;
+}
+.show-all-icon {
+    width: 0.8rem;
+    height: 0.8rem;
+    background: url('../imgs/jd-sprites_c4019063.png') no-repeat -107px -109px ;
+    background-size: 200px 200px;
+}
+
 /* 主要内容 */
 .bigbox{
 	display:flex;
@@ -236,6 +424,11 @@ nav{
 	padding:0.25rem;
 	margin-top:1.5rem;
 	background:rgb(247,247,247);
+}
+.sec_kill_floor .title_wrap {
+    height: 1.7rem;
+    line-height: 1.7rem;
+    vertical-align: middle;
 }
 .bigbox-l{
 	width:50%;
@@ -354,4 +547,12 @@ nav{
 	-webkit-box-align: center;
 	-webkit-align-items: center;
 	align-items: center;
+}
+.swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-fraction {
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+}
+.swiper-pagination  .swiper-pagination-bullet-active{
+	background: red!important;
 }

@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<meta name='viewport' content="width=device-width,initial-scale=1.0,user-scalable=no"/>
 		<title>京东</title>
+		<link href="css/swiper-bundle.min.css" rel="stylesheet"/>
 		<link href="css/jd.css" rel='stylesheet'>
 	</head>
 	<body>
@@ -20,10 +21,10 @@
 			</nav>
 		</header>
 		<!-- 内容样式 -->
-		<section>
+		<section class="zb">
 			<div class="slider-bg"></div>
 			<!-- 京东轮播图 -->
-			<div class="banner-box">
+			<div class="banner-box swiper">
 				<ul class="banner-list">
 					<li class="p1">
 						<a href="">
@@ -52,54 +53,262 @@
 				<img src="imgs/banner-static.png">
 			</div>
 			<!-- 中部分类栏 -->
-			<div middle-box>
-				<div class="middle-nav">
-					<a href="" class="a1">
-						<img src="imgs/jdcs.png">
-						<span>京东超市</span>
-					</a>
-					<a href="" class="a1">
-						<img src="imgs/jdcs.png">
-						<span>京东超市</span>
-					</a>
-					<a href="" class="a1">
-						<img src="imgs/jdcs.png">
-						<span>京东超市</span>
-					</a>
-					<a href="" class="a1">
-						<img src="imgs/jdcs.png">
-						<span>京东超市</span>
-					</a>
-					<a href="" class="a1">
-						<img src="imgs/jdcs.png">
-						<span>京东超市</span>
-					</a>
-					<a href="" class="a1">
-						<img src="imgs/jdcs.png">
-						<span>京东超市</span>
-					</a>
-					<a href="" class="a1">
-						<img src="imgs/jdcs.png">
-						<span>京东超市</span>
-					</a>
-					<a href="" class="a1">
-						<img src="imgs/jdcs.png">
-						<span>京东超市</span>
-					</a>
-					<a href="" class="a1">
-						<img src="imgs/jdcs.png">
-						<span>京东超市</span>
-					</a>
-					<a href="" class="a1">
-						<img src="imgs/jdcs.png">
-						<span>京东超市</span>
-					</a>
+			<div class="middle-box swiper">
+				<div class="middle-box-container swiper-wrapper">
+					<div class="middle-nav swiper-slide">
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+					</div>
+					<div class="middle-nav-r swiper-slide">
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+						<a href="" class="a1">
+							<img src="imgs/jdcs.png">
+							<span>京东超市</span>
+						</a>
+					</div>
 				</div>
-				<div class="middle-spans">
-					<span class="cu"></span>
-					<span></span>
+				
+				<div class="swiper-pagination">
+					<!-- <span class="cu"></span>
+					<span></span> -->
 				</div>
 			</div>
+			<!-- 限时秒杀 -->
+			<!-- <div class="floor seckill">
+				<div class="floor-the-container">
+					<div class="floor-container">
+						<div class="sec_kill_floor swiper">
+							<div class="title_wrap">
+								<a href="" class="seckill-left-link j_more_sec_link">
+									<div class="seckill-tit-img">京东秒杀</div>
+								</a>
+								<a href="" class="seckill-more-link j_more_sec_link">
+									爆款轮番秒
+									<i class="seckill-more-icon"></i>
+								</a>
+							</div>
+								<div class="floor-container seckill-slider j_sk_wrapper swiper-wrapper">
+									<ul class="seckill-new-list j_sk_list swiper-slide">
+										<li class="seckill-new-item j_sk_li">
+											<div class="seckill-item-img">
+												<a class="seckill-new-link">
+													<img src="imgs/001db3826a48d58e.jpg" class="seckill-photo"/>
+												</a>
+											</div>
+											<div class="seckill-item-price">
+												<span class="seckill-new-price">
+													<em>¥</em>
+													<span class="j_init_price">3569</span>
+												</span>
+											</div>
+										</li>
+										<li class="seckill-new-item j_sk_li ">
+											<div class="seckill-item-img">
+												<a class="seckill-new-link">
+													<img src="imgs/001db3826a48d58e.jpg" class="seckill-photo"/>
+												</a>
+											</div>
+											<div class="seckill-item-price">
+												<span class="seckill-new-price">
+													<em>¥</em>
+													<span class="j_init_price">3569</span>
+												</span>
+											</div>
+										</li>
+										<li class="seckill-new-item j_sk_li ">
+											<div class="seckill-item-img">
+												<a class="seckill-new-link">
+													<img src="imgs/001db3826a48d58e.jpg" class="seckill-photo"/>
+												</a>
+											</div>
+											<div class="seckill-item-price">
+												<span class="seckill-new-price">
+													<em>¥</em>
+													<span class="j_init_price">3569</span>
+												</span>
+											</div>
+										</li>
+										<li class="seckill-new-item j_sk_li ">
+											<div class="seckill-item-img">
+												<a class="seckill-new-link">
+													<img src="imgs/001db3826a48d58e.jpg" class="seckill-photo"/>
+												</a>
+											</div>
+											<div class="seckill-item-price">
+												<span class="seckill-new-price">
+													<em>¥</em>
+													<span class="j_init_price">3569</span>
+												</span>
+											</div>
+										</li>
+										<li class="seckill-new-item j_sk_li ">
+											<div class="seckill-item-img">
+												<a class="seckill-new-link">
+													<img src="imgs/001db3826a48d58e.jpg" class="seckill-photo"/>
+												</a>
+											</div>
+											<div class="seckill-item-price">
+												<span class="seckill-new-price">
+													<em>¥</em>
+													<span class="j_init_price">3569</span>
+												</span>
+											</div>
+										</li>
+										<li class="seckill-new-item j_sk_li ">
+											<div class="seckill-item-img">
+												<a class="seckill-new-link">
+													<img src="imgs/001db3826a48d58e.jpg" class="seckill-photo"/>
+												</a>
+											</div>
+											<div class="seckill-item-price">
+												<span class="seckill-new-price">
+													<em>¥</em>
+													<span class="j_init_price">3569</span>
+												</span>
+											</div>
+										</li>
+										<li class="seckill-new-item j_sk_li ">
+											<div class="seckill-item-img">
+												<a class="seckill-new-link">
+													<img src="imgs/001db3826a48d58e.jpg" class="seckill-photo"/>
+												</a>
+											</div>
+											<div class="seckill-item-price">
+												<span class="seckill-new-price">
+													<em>¥</em>
+													<span class="j_init_price">3569</span>
+												</span>
+											</div>
+										</li>
+										<li class="seckill-new-item j_sk_li ">
+											<div class="seckill-item-img">
+												<a class="seckill-new-link">
+													<img src="imgs/001db3826a48d58e.jpg" class="seckill-photo"/>
+												</a>
+											</div>
+											<div class="seckill-item-price">
+												<span class="seckill-new-price">
+													<em>¥</em>
+													<span class="j_init_price">3569</span>
+												</span>
+											</div>
+										</li>
+										<li class="seckill-new-item j_sk_li ">
+											<div class="seckill-item-img">
+												<a class="seckill-new-link">
+													<img src="imgs/001db3826a48d58e.jpg" class="seckill-photo"/>
+												</a>
+											</div>
+											<div class="seckill-item-price">
+												<span class="seckill-new-price">
+													<em>¥</em>
+													<span class="j_init_price">3569</span>
+												</span>
+											</div>
+										</li>
+										<li class="seckill-new-item j_sk_li ">
+											<div class="seckill-item-img">
+												<a class="seckill-new-link">
+													<img src="imgs/001db3826a48d58e.jpg" class="seckill-photo"/>
+												</a>
+											</div>
+											<div class="seckill-item-price">
+												<span class="seckill-new-price">
+													<em>¥</em>
+													<span class="j_init_price">3569</span>
+												</span>
+											</div>
+										</li>
+										
+										<li class="seckill-all-item">
+											<a class="j_more_sec_link j_scroll_more_sec_link" href="#">
+												<div class="seckill-all">
+													<i class="show-all-icon"></i>
+													<span class="show-all-title">查看全部</span>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div> -->
 			<!-- 主要内容 -->
 			<div class="bigbox">
 				<div class="bigbox-l">
@@ -191,4 +400,5 @@
 		</section>
 	</body>
 </html>
+<script src="js/swiper-bundle.min.js"></script>
 <script src="js/jd.js"></script>

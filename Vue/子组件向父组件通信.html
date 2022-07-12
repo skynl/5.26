@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="root">
+			<div>{{msg}}</div>
+			<!-- 在组件上监听事件 -->
+			<my-child v-on:haha = "hahaHandler"></my-child>
+		</div>
+	</body>
+</html>
+<script src="js/vue.global.js"></script>
+<script>
+	let myChild = {
+		data(){
+			return {
+				childMsg : '子组件数据',
+			}
+		},
+		template : `
+		<h1>我是子组件 -：{{childMsg}}</h1>
+		<button @click="clickHandler">点击触发自定义事件</button>
+		`,
+		methods : {
+			hahaHandler(val){
+				// 第一个参数为事件名，第二个参数可传递数据
+				console.log('触发了自定义事件的执行函数');
+				console.log(val);
+				this.$emit('haha',this.childMsg);
+				this.msg = val;
+			}
+		}
+	};
+	
+	const app = Vue.createApp({
+		
+		data(){
+			return {
+				msg : '我是父组件数据',
+			}
+		},
+		components : {
+			myChild,
+		},
+		// 子组件中如果有自定义事件，要记录自定义事件名
+		emits : ['haha'],
+		methods : {
+			clickHandler(){
+				
+			}
+		}
+	});
+	app.mount('#root');
+</script>

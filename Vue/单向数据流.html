@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			[v-cloak]{display :none;}
+		</style>
+	</head>
+	<body>
+		<div id="root">
+			<button @click="msg = '哈哈'">按钮</button>
+			<div v-cloak>{{msg}}</div>
+			<my-Child :msg="msg" v-cloak></my-Child>
+		</div>
+	</body>
+</html>
+<script src="js/vue.global.js"></script>
+<script>
+	let myChild = {
+		props : ['msg'],
+		template:`
+			<h1>{{msg}} --接收到的父组件数据是:{{msg}}</h1>
+			<button @click="msg= '长沙'" >子组件内改变父组件溜过来的msg</button>
+		`,
+		// 数据
+		
+	}
+	
+	
+	const app = Vue.createApp({
+		data(){
+			return {
+				msg : '我是父组件数据'
+			}
+		},
+		components : {
+			myChild,
+		}
+	});
+	app.mount('#root');
+</script>

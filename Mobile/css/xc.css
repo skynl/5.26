@@ -566,3 +566,14 @@ ul {
 }
 .swiper-slide img{width:100%}
 
+.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal{
+	/* top:10px; */
+	bottom:70px;
+	left:50px;
+	
+}
+.swiper-pagination  .swiper-pagination-bullet-active{
+	width:14px;
+	background: #fff!important;
+	border-radius: 6px;
+}

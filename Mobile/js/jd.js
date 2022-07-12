@@ -125,6 +125,38 @@ bannerList.addEventListener('transitionend',function(){
 var spans = document.querySelector('.spans');
 var spanList = spans.querySelectorAll('span');
 var current = spans.querySelector('.current');
+// var middleBox = document.querySelector('.middle-box');
+var myswiper = new Swiper('.middle-box', {
+	//设置初始化显示项下标，默认为0
+	initialSlide : 0,
+	// direction : 'vertical',
+	grabCursor : true,
+	loop:false,
+	// freeMode:true,
+	// autoplay : false,
+	// autoplay : {
+	// 	delay : 1000
+	// },
+	//调用分页器
+	pagination : {
+		el : '.swiper-pagination'
+	}
+	
+});
 
-
+var Myswiper = new Swiper('.sec_kill_floor', {
+	//设置初始化显示项下标，默认为0
+	initialSlide : 0,
+	// direction : 'vertical',
+	grabCursor : false,
+	freeMode:true,
+	loop:true,
+	// freeMode:true,
+	// autoplay : false,
+	// autoplay : {
+	// 	delay : 1000
+	// },
+	//调用分页器
+	
+});
 

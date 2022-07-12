@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="root">
+			{{parent}}
+			<!-- 父组件向子组件通信，在组件上绑定自定义属性和值 -->
+			<!-- 在整个root内可以拿到父组件的数据 -->
+			<!-- <my-Child haha="长沙"></my-Child> -->
+			<!-- 用vue绑定属性值 -->
+			<!-- <my-Child :haha="'长沙'"></my-Child> -->
+			<!-- <my-Child :haha="['长沙','北京']"></my-Child> -->
+			<!-- <my-Child :haha="{age:18}"></my-Child> -->
+			<!-- <my-Child :haha="parent"></my-Child> -->
+			<my-Child :haha-a="'小明'"></my-Child>
+		</div>
+	</body>
+</html>
+<script src="js/vue.global.js"></script>
+<script>
+	let myChild = {
+		// 在子组件内部通过props属性接受值
+		props :['hahaA'],//接收的是绑定的属性名
+		template:`
+			<h1>{{msg}} --接收到的父组件数据是:{{hahaA}}</h1>
+		`,
+		// 数据
+		data(){
+			return {
+				msg : '我是子组件',
+			}
+		}
+	}
+	
+	
+	const app = Vue.createApp({
+		data(){
+			return {
+				parent : '我是父组件数据'
+			}
+		},
+		components : {
+			myChild,
+		}
+	});
+	app.mount('#root');
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算属性</title>
+</head>
+
+<body>
+    <div id="app">
+		<!-- 遍历数组 -->
+		<div v-for="(item,index) in arr">{{item}}---{{index}}</div>
+		<div v-for="(item,index) in arr">
+			<h1>{{item}}</h1>
+		</div>
+		<!-- 遍历对象 -->
+		<p v-for="(item,k) in obj">{{item}}---{{k}}</p>
+    </div>
+</body>
+
+</html>
+<script src="js/vue.global.js"></script>
+<script>
+    const app = Vue.createApp({
+		data(){
+			return{
+				arr : ['a','b','c'],
+				obj : {
+					name : "小明",
+					age : 18,
+					sex : "男",
+				}
+			}
+		}
+	})
+	
+	const vm = app.mount('#app');
+</script>

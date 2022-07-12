@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<!-- <button v-on:click="事件处理函数">按钮</button> -->
+			<!-- <button v-on:click="clickHander">按钮</button> -->
+			<!-- <button v-on:click="foo">按钮foo</button> -->
+			
+			<!-- 关于参数 -->
+			<!-- <button v-on:click="clickHander('哈哈')">参数按钮</button> -->
+			
+			<!-- 关于事件对象 -->
+			<!-- <button v-on:click="clickHander($event,'哈哈')">事件按钮</button> -->
+			
+			<!-- 多事件处理 -->
+			<button v-on:click="clickHander($event,'哈哈'),foo()">按钮</button>
+			
+			{{str}}
+		</div>
+	</body>
+</html>
+<script src="js/vue.global.js"></script>
+<script>
+	const app = Vue.createApp({
+		data(){
+			return {
+				str : 'abcdefg'
+			}
+		},
+		// 钩子函数
+		mounted(){
+			// 通过this访问组件实例
+			this.foo();
+		},
+		// 对应方法选项
+		methods: {
+			clickHander(e,val) {
+				console.log(e);
+				console.log(val);
+			},
+			foo(){
+				console.log("foo");
+			}
+		},
+	});
+	app.mount("#app");
+</script>

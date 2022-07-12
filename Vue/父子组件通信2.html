@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="root">
+			<div>{{parent}}</div>
+			<my-Child :haha="'小明'" :age="18" :sex="'男'"></my-Child>
+		</div>
+	</body>
+</html>
+<script src="js/vue.global.js"></script>
+<script>
+	let myChild = {
+		// 在子组件内部通过props属性接受值
+		// props :['haha','age','sex'],//接收的是绑定的属性名
+		// 使用对象形式
+		props: {
+			haha: {
+				type: String,
+				default: '小白'
+			},
+			age: {
+				type: Number,
+				default: '20'
+			},
+			sex: {
+				type: String,
+				default: '女'
+			},
+		},
+		template:`
+			<h1>{{msg}} --接收到的父组件数据是:{{haha}} -- {{age}} -- {{sex}}</h1>
+		`,
+		// 数据
+		data(){
+			return {
+				msg : '我是子组件',
+			}
+		}
+	}
+	
+	
+	const app = Vue.createApp({
+		data(){
+			return {
+				parent : '我是父组件数据'
+			}
+		},
+		components : {
+			myChild,
+		}
+	});
+	app.mount('#root');
+</script>
