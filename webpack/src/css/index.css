@@ -1,0 +1,12 @@
+.box{
+	width:200px;
+	height: 200px;
+	background: orange;
+	display: flex;
+	box-shadow: 10px 10px 10px #000;
+	-webkit-box-reflect:below 10px; 
+	/* background: url(../img/phone.png); */
+}
+/* body{
+	background: url(../img/header_bg.jpg);
+} */

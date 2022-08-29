@@ -1,0 +1,349 @@
+/* 详情上部导航栏 */
+.slist-t>ul{
+	width:1000px;
+	margin:10px auto;
+	display:flex;
+	font-size:12px;
+	color:#bfbfbf;
+}
+.slist-t>ul>li>a{
+	color:#bfbfbf;
+}
+.slist-t .active>a{
+	color:#333;
+}
+.xq-box{
+	width:800px;
+	display:flex;
+	
+}
+
+/* 详情主体 */
+.xq-box{
+	width:800px;
+	height:500px;
+	display:flex;
+	flex-warp:warp;
+	
+}
+.xq-bigBox{
+	width:1000px;
+	margin:0px auto;
+	display:flex;
+}
+/* 详情轮播图 */
+.xq-big{
+	width:350px;
+	height:350px;
+	overflow:hidden;
+	
+}
+.xq-lb-bg{
+	width:2880px;
+	height:350px;
+	position:relative;
+	
+}
+.xq-lb-bg>li{
+	width:350px;
+	height:350px;
+	position:absolute;
+	top:0px;left:0px;
+}
+.xq-lb-bg>li>img{
+	display:block;
+	width:100%;
+	height:100%;
+}
+.xq-small{
+	width:350px;
+	height:95px;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+.xq-small>span{
+	display:block;
+	width:10px;
+	height:18px;
+}
+.xq-small span:first-child{
+	background:url("../xq-imgs/left.png");
+	background-size:10px 18px;
+}
+.xq-small span:last-child{
+	background:url("../xq-imgs/right.png");
+	background-size:10px 18px;
+}
+.xq-small>li{
+	width:65px;
+	height:64px;
+}
+.xq-small>li>img{
+	display:block;
+	width:100%;
+	height:100%;
+}
+.xq-lb-bg .xq-imgActive{
+	z-index:1;
+}
+.xq-small .xq-active{
+	border:1px solid black;
+}
+#last,#next{
+	cursor: pointer;
+}
+/* 详情中部样式 */
+.xq-info{
+	width:330px;
+	margin-left:60px;
+}
+.xqFavoriteCount{
+	display:block;
+	padding-left:20px;
+	background:url('../xq-imgs/heixin.png') no-repeat 5px ;
+	background-size:14px 13px;;
+}
+.xq-logo>a{
+	color:#878787;
+	font-size:24px;
+	line-height:36px;
+}
+.xq-name{
+	font-size:20px;
+	color:#333;
+}
+.xq-price{
+	font-size:12px;
+	color:rgb(153, 153, 153);
+}
+.xq-price>span:nth-child(1){
+	color:rgb(16,131,255);
+	font-size:18px;
+}
+.xq-price>span:nth-child(2){
+	text-decoration:line-through;
+}
+.xsth{
+	margin-left:35px;
+}
+.xsth>span{
+	font-size:12px;
+	border-radius:2px;
+	margin-left:7px;
+	padding:1px 4px 1px 4px;
+	color:white;
+	background:rgb(220,150,180);
+}
+.huodong{
+	margin:10px;
+}
+.huodong>img{
+	float:left;
+	margin-left:40px;
+	width:30px;
+	height:30px;
+}
+.huodong>p{
+	padding-left:80px;
+	font-size:12px;
+}
+.shipNote>span{
+	font-size:12px;
+	color:rgb(153,153,153);
+}
+.shipNote>span:nth-child(1){
+	margin-left:40px;
+	padding-left:17px;
+	background:url('../xq-imgs/plain.png') no-repeat 0px 3px;
+	background-size:12px;
+}
+.shipNote>span:nth-child(2){
+	padding-left:17px;
+	background:url('../xq-imgs/star.png') no-repeat ;
+	background-size:12px;
+}
+.xq-size{
+	margin:10px 0px;;
+	padding:5px 0px;
+	display:flex;
+	font-size:12px;
+	color:rgb(153,153,153);
+}
+.xq-size>div{
+	padding:2px 10px;
+	background:#dcdcdc;
+	height:20px;
+	line-height:20px;
+	border:1px solid black;
+}
+.xq-size>div>a{
+	color:#999;
+}
+.imgCon{
+	width:34px;
+	height:34px;
+	margin:0px auto;
+}
+.infoItemColorCon{
+	display:flex;
+	padding:5px 0px;
+	margin:10px 0px;
+}
+.infoItemColorCon>div:nth-child(1){
+	font-size:12px;
+	color:rgb(153,153,153);
+	line-height:60px;
+}
+.imgCon>img{
+	width:100%;
+	height:100%;
+	
+}
+.infoItemColorCon>div:nth-child(2){
+	width:45px;
+	height:60px;
+	
+}
+.imgCon-name{
+	line-height:22px;
+	font-size:12px;
+	text-align:center;
+}
+.xq-number{
+	display:flex;
+}
+.xq-number>div{
+	line-height:24px;
+	font-size:12px;
+	color: rgb(153,153,153);
+}
+
+.xq-number>a>img{
+	width:13px;
+	height:13px;
+	
+}
+.xq-number>input{
+	margin: 0px 7px;
+	width: 52px;
+	height: 24px;
+	display: inline-block;
+	line-height: 24px;
+	vertical-align: middle;
+	color: #666;
+	font-size: 13px;
+	border: none;
+	outline:none;
+	background: white;
+	text-align: center;
+	border: 1px solid rgb(238,238,238);
+}
+.xq-buy1{
+	margin-top:5px;
+	width:330px;
+	font-size: 21.8px;
+	color: #999;
+	font-weight: 100;
+	text-align: center;
+	margin-top: 15px;
+	font-size: 14.5px;
+	padding: 10px 0px;
+	line-height: 24px;
+	vertical-align: middle;
+	color: #393433;
+}
+.xq-buy1>a{
+	display:block;
+	background: black;
+	width: 330px;
+	height: 42px;
+	line-height: 42px;
+	color:white;
+}
+.xq-buy2{
+	display:flex;
+	justify-content:space-between;
+}
+.xq-buy2>a:nth-child(1){
+	display: inline-block;
+	width: 160px;
+	height: 32px;
+	border: none;
+	color: black;
+	line-height: 32px;
+	font-size: 13px;
+	border: 1px solid black;
+	background-color: #fff;
+	background: url('../xq-imgs/buyCar.png') #fff no-repeat;
+	float: left;
+	background-size: 15px;
+	background-position: 38px 8px;
+}
+.xq-buy2>a:nth-child(1)>span{
+	margin-left: 60px;
+}
+.xq-buy2>a:nth-child(2){
+	display: inline-block;
+	width: 160px;
+	height: 32px;
+	border: none;
+	color: black;
+	line-height: 32px;
+	font-size: 13px;
+	border: 1px solid black;
+	background-color: #fff;
+	background: url('../xq-imgs/share.png') #fff no-repeat;
+	float: left;
+	background-size: 12px;
+	background-position: 48px 8px;
+}
+.xq-buy2>a:nth-child(2)>span{
+	margin-left: 70px;
+}
+/* 详情右部样式 */
+.xq-cai{
+	width:200px;
+}
+.xq-cai>div{
+	 margin-left: 30px;
+	 font-size:14px;
+	 font-weight: bold;
+}
+
+.xq-r1>a>div>img{
+	margin-top:10px;
+	width:200px;
+}
+.xq-r1>a{
+	font-size: 12px;
+	color:rgb(51,51,51);
+}
+.xq-r1>a>span{
+	padding-top: 10px;
+	line-height: 1.5;
+	height: auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+}
+.xq-r1>div:nth-child(2){
+	margin-top:7px;
+	font-size:12px;
+	color:rgb(153,153,153);
+}
+.xq-r1>div:nth-child(3){
+	margin-top: 0px;
+    float: left;
+    height: 24px;
+    color: #3193F3;
+    font-size: 14px;
+}
+/* 详情下部广告图 */
+.xq-bottom{
+	width:720px;
+	margin:20px;
+}
+.xq-bottom>img{
+	width:720px;
+}

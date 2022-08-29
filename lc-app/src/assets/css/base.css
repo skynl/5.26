@@ -1,0 +1,39 @@
+*{margin: 0px;padding: 0px;}
+li{list-style:none;}
+img{vertical-align: bottom;}
+a{text-decoration: none;}
+
+input[type="button"],button{outline:none;}
+
+/* 全局CSS变量 */
+:root{
+    --base-color:rgb(137,207,235);
+}
+/* 设置滑动 */
+html,body{
+    height: 100%;
+    background: #FAFAFA;
+}
+#app{
+    height: 100%;
+}
+#home,#classify-view, #cart-view, #user-view{
+    height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+}
+#classify-detail-view, #product-view, #login-view{
+	height: 100vh;
+	width:100%;
+	overflow-y: auto;
+	box-sizing: border-box;
+	position: absolute;
+	left: 0px;
+	top:0px;
+	z-index: 2;
+	background: #f7f7f7;
+}
+::-webkit-scrollbar{
+    width:0px;
+}

@@ -1,0 +1,19 @@
+/* 全局去覆盖vant变量值 */
+:root{
+    /* --van-tabbar-background-color : rgba(0,0,0,0.3); */
+    --van-search-action-text-color	: #666;
+
+    --van-tabs-bottom-bar-color :  rgb(137,207,235);
+    --van-tabs-bottom-bar-height:   2px;
+
+    --van-nav-bar-background-color: rgb(137,207,235);
+    --van-nav-bar-text-color: #fff;
+    --van-nav-bar-title-text-color: #fff;
+    --van-nav-bar-arrow-size:16px;
+
+    --van-badge-background-color:rgb(135,206,235); 
+    --van-badge-border-width	:0px;
+    --van-cell-icon-size:20px;
+    --van-card-padding:0px;
+    --van-checkbox-label-margin	:10px;
+}
